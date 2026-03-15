@@ -5,7 +5,7 @@ const assets = [
   './style.css',
   './script.js',
   './manifest.json',
-  './bg.jpg',
+  './background.jpg',
 ];
 
 // Install service worker
