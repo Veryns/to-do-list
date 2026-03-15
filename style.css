@@ -1,0 +1,101 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: #0a0a12;
+    color: #f0f0f0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 15px;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    background: rgba(15, 20, 35, 0.8); 
+    backdrop-filter: blur(15px);
+    padding: 25px;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: #4db8ff;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.input-section { display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; }
+
+input[type="text"], input[type="date"] {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.shortcut-btns { display: flex; gap: 8px; margin-top: 5px; }
+
+.btn-shortcut {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(77, 184, 255, 0.3);
+    color: #4db8ff;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button#addBtn {
+    background: #007acc;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.todo-list { list-style: none; }
+
+.todo-item {
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 12px;
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.checkbox { width: 18px; height: 18px; accent-color: #4db8ff; cursor: pointer; }
+
+.task-info { flex: 1; }
+.task-info strong { display: block; font-size: 15px; transition: 0.3s; }
+.task-info span { font-size: 11px; color: #8899a6; }
+
+/* EFEK CORET SAAT DICENTANG */
+.checkbox:checked + .task-info strong {
+    text-decoration: line-through;
+    color: #8899a6;
+    opacity: 0.5;
+}
+
+.delete-btn {
+    background: none;
+    color: #cf6679;
+    border: 1px solid #cf6679;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 10px;
+    cursor: pointer;
+}
