@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern To-Do List</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007acc">
+    
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/906/906334.png">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>My Tasks</h1>
+    
+    <div class="input-section">
+        <input type="text" id="taskInput" placeholder="Ketik tugas baru...">
+        
+        <div class="date-controls">
+            <input type="date" id="dateInput">
+            <div class="shortcut-btns">
+                <button class="btn-shortcut" onclick="setToday()">Hari Ini</button>
+                <button class="btn-shortcut" onclick="setTomorrow()">Besok</button>
+            </div>
+        </div>
+
+        <button id="addBtn" onclick="addTask()">Tambah Tugas</button>
+        <button id="clearDateBtn" onclick="deleteTasksByDate()">Hapus Tugas Per Tanggal</button>
+    </div>
+
+    <ul id="taskList" class="todo-list">
+        </ul>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('sw.js')
+                .then(reg => console.log("Service Worker terdaftar!", reg))
+                .catch(err => console.log("Gagal mendaftarkan Service Worker", err));
+        });
+    }
+</script>
+
+</body>
+</html>
